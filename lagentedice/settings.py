@@ -37,6 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django_password_strength',
+
+    'bootstrap3',
+    'nocaptcha_recaptcha',    
+
+    'despidos',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',    
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',    
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +68,7 @@ ROOT_URLCONF = 'lagentedice.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +80,13 @@ TEMPLATES = [
         },
     },
 ]
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
 
 WSGI_APPLICATION = 'lagentedice.wsgi.application'
 
@@ -117,5 +137,40 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-
+SITE_ID = 1
 STATIC_URL = '/static/'
+
+
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+ACCOUNT_EMAIL_REQUIRED = True
+
+
+SOCIALACCOUNT_PROVIDERS = \
+    { 'google':
+        { 'SCOPE': ['profile', 'email'],
+          'AUTH_PARAMS': {'access_type': 'online' } },
+      'facebook':
+       {'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'FIELDS': [
+            'email',
+            'first_name',
+            'last_name',
+            'verified',
+            'gender',
+            ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': lambda request: 'en_US',
+        'VERIFIED_EMAIL': True,
+        'VERSION': 'v2.4'}}
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -16,7 +16,6 @@
         {% block extra_css %}{% endblock %}
 
 
-
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
       <script src="{% static 'js/html5shiv.js' %}"></script>
@@ -26,17 +25,34 @@
     </head>
 
     <body>
-Hola mundo
-        <script type="text/javascript"
-                src="{% static 'js/jquery.js' %}"></script>
 
-        <script type="text/javascript"
-                src="{% static 'js/bootstrap.js' %}"></script>
 
-        <script type="text/javascript"
-                src="{% static 'js/jquery.fancybox.js' %}"></script>
+<br>
+    <a href="{% url 'account_signup' %}">
+        <i class="glyphicon glyphicon-user"></i>
+        Signup
+    </a>
+<br>
+    <a href="{% url 'account_login' %}"><i
+            class="glyphicon glyphicon-lock"></i>
+        Login</a>
 
-        {% block extra_js %}{% endblock %}
+<br>
+    <a href="{% url 'account_reset_password' %}"><i
+            class="glyphicon glyphicon-question-sign"></i>
+        Forgot Password?</a>
+
+<br>
+    <script type="text/javascript"
+            src="{% static 'js/jquery.js' %}"></script>
+
+    <script type="text/javascript"
+            src="{% static 'js/bootstrap.js' %}"></script>
+
+    <script type="text/javascript"
+            src="{% static 'js/jquery.fancybox.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
 
     </body>
     </html>{% endspaceless %}
