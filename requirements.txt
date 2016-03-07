@@ -5,3 +5,4 @@ django-nocaptcha-recaptcha
 django-password-strength
 django_compressor
 django-debug-toolbar
+django-mptt
