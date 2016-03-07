@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 
     'bootstrap3',
     'nocaptcha_recaptcha',    
-
+    #DEV!
+    'debug_toolbar',
     'despidos',
 
     'allauth',
