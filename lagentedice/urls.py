@@ -28,4 +28,8 @@ urlpatterns = [
      url(r'^nuevo/$',
         login_required( NewDismissalView.as_view()),
         name='new_dismissal_view'),
+     url(r'^(?P<pk>[0-9]+)/edit/$',
+         login_required( EditDismissalView.as_view()),
+         name='edit_dismissal_view'),
+
 ]
