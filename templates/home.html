@@ -78,9 +78,15 @@
 
           <div class="col-md-4">
             <div class="login-container">
+              {% if user.is_authenticated %}
+              <a href="{% url 'account_logout' %}"><i class="glyphicon glyphicon-lock"></i>
+                Cerrar Secion
+              </a>
+              {% else %}
               <a href="{% url 'account_login' %}"><i class="glyphicon glyphicon-lock"></i>
                 Ingresar
               </a>
+              {% endif %}
               <a href="{% url 'account_reset_password' %}"> <i class="glyphicon glyphicon-question-sign"></i>
                 Olvidaste tu contraseña?
               </a>
@@ -93,7 +99,6 @@
     {# =js #}
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
->>>>>>> d6c8c772f7b4a2af0fe7c710dbe960a8869d00be
 
     {% block extra_js %}{% endblock %}
 

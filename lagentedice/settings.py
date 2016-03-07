@@ -155,6 +155,8 @@ AUTHENTICATION_BACKENDS = (
 
 ACCOUNT_EMAIL_REQUIRED = True
 
+ACCOUNT_ADAPTER = 'despidos.adapter.MyAccountAdapter'
+
 
 SOCIALACCOUNT_PROVIDERS = \
     { 'google':
