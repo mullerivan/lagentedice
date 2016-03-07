@@ -20,14 +20,14 @@ from allauth.utils import set_form_field_order
 from django.forms.widgets import Select
 
 __all__ = (
-    'EscrowSignupForm',    
+    'SignupForm',    
 )
 
 
 
 
 
-class EscrowSignupForm(SignupForm):
+class SignupForm(SignupForm):
     """Base registration form for both individual and company forms."""
 
     account_type = forms.ChoiceField(
@@ -93,10 +93,4 @@ class EscrowSignupForm(SignupForm):
         set_form_field_order(self, ['account_type', 'email', 'first_name',
                                     'password1', 'password2', 'captcha'])
 
-
-class ChooseAccountTypeForm(forms.Form):
-    account_type = forms.ChoiceField(
-        label=_("You are going to SignUp  as a:"),
-        choices=AccountType.CHOICES,
-        widget=forms.RadioSelect)
 
