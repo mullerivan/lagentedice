@@ -26,44 +26,7 @@
       <script src="{% static 'js/respond.min.js' %}"></script>
     <![endif]-->
 
-<<<<<<< HEAD
-    </head>
-
-    <body>
-
-
-<br>
-    <a href="{% url 'account_signup' %}">
-        <i class="glyphicon glyphicon-user"></i>
-        Signup
-    </a>
-<br>
-{% if user.is_authenticated %}
-    <a href="{% url 'account_logout' %}"><i
-            class="glyphicon glyphicon-lock"></i>
-        Logout</a>
-{% else %}
-    <a href="{% url 'account_login' %}"><i
-            class="glyphicon glyphicon-lock"></i>
-        Login</a>
-
-{% endif %}
-<br>
-    <a href="{% url 'account_reset_password' %}"><i
-            class="glyphicon glyphicon-question-sign"></i>
-        Forgot Password?</a>
-
-<br>
-    <script type="text/javascript"
-            src="{% static 'js/jquery.js' %}"></script>
-
-    <script type="text/javascript"
-            src="{% static 'js/bootstrap.js' %}"></script>
-
-    <script type="text/javascript"
-            src="{% static 'js/jquery.fancybox.js' %}"></script>
-=======
-  </head>
+ </head>
 
   <body>
 
