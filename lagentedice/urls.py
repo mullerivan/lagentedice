@@ -24,5 +24,8 @@ urlpatterns = [
     url(r'^$',
         HometView.as_view(),
         name='home'),
+     url(r'^nuevo/$',
+        FormView.as_view(),
+        name='me_despidieron_view'),
     
 ]
