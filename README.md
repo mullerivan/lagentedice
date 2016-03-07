@@ -1,4 +1,6 @@
 # lagentedice
+
+[![Join the chat at https://gitter.im/mullerivan/lagentedice](https://badges.gitter.im/mullerivan/lagentedice.svg)](https://gitter.im/mullerivan/lagentedice?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 TODO: hay q crear un frontend donde la gente se pueda registrar y despues decir boludeces como me echaron
 o me cagaron a palo y en la pagina principal un contador
 
