@@ -1,0 +1,23 @@
+{% load socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+
+{% for provider in socialaccount_providers %}
+    <li>
+        {% if provider.id == "facebook" %}
+            <a title="{{ provider.name }}"
+               class="btn btn-block btn-social  btn-{{ provider.id }} "
+               href="{% provider_login_url provider.id process='js_sdk' scope=scope auth_params=auth_params %}">
+                <span class="fa fa-{{ provider.id }}"></span>
+                Connect with {{ provider.name }} account</a>
+        {% else %}
+            <a title="{{ provider.name }}"
+               class="btn btn-block btn-social  btn-{{ provider.id }} "
+               href="{% provider_login_url provider.id process='login' scope=scope auth_params=auth_params %}">
+                <span class="fa fa-{{ provider.id }}"></span>
+                Connect with {{ provider.name }} account</a>
+        {% endif %}
+    </li>
+{% endfor %}
+
+s
