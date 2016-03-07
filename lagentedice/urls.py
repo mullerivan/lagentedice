@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from despidos.views import *
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
 	#url(r'despidos/', include('despidos.urls')),
@@ -25,6 +26,6 @@ urlpatterns = [
         HomeView.as_view(),
         name='home'),
      url(r'^nuevo/$',
-        NewDismissalView.as_view(),
+        login_required( NewDismissalView.as_view()),
         name='new_dismissal_view'),
 ]

@@ -24,7 +24,6 @@ class HomeView(TemplateView):
         #aca se hacen las cosas
         return super(HomeView, self).get(request, *args, **kwargs)
 
-
 class NewDismissalView(CreateView):
     template_name = 'new_dismissal.html'
     form_class = DismissalForm
