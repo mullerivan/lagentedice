@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 # vim: set expandtab tabstop=4 shiftwidth=4:
 from __future__ import absolute_import
@@ -13,6 +14,9 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
+from mptt.models import MPTTModel
+from mptt.models import TreeForeignKey
+from mptt.managers import TreeManager
 
 __all__ = (
     'Comment',
