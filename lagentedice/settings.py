@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 
     'bootstrap3',
     'nocaptcha_recaptcha',    
-
+    #DEV!
+    'debug_toolbar',
     'despidos',
 
     'allauth',
@@ -139,6 +140,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 SITE_ID = 1
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 
 

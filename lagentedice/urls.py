@@ -18,6 +18,7 @@ from django.contrib import admin
 from despidos.views import *
 
 urlpatterns = [
+<<<<<<< HEAD
 	#url(r'despidos/', include('despidos.urls')),
 	url(r'^accounts/', include('allauth.urls')),
     url(r'^admin/', admin.site.urls),
@@ -28,4 +29,10 @@ urlpatterns = [
         FormView.as_view(),
         name='me_despidieron_view'),
     
+=======
+        #url(r'despidos/', include('despidos.urls')),
+        url(r'^accounts/', include('allauth.urls')),
+        url(r'^admin/', admin.site.urls),
+        url(r'^$', HomeView.as_view(), name='home'),
+>>>>>>> d6c8c772f7b4a2af0fe7c710dbe960a8869d00be
 ]
