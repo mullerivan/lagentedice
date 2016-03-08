@@ -18,6 +18,8 @@ from django.contrib import admin
 from despidos.views import *
 from django.contrib.auth.decorators import login_required
 
+admin.autodiscover()
+
 urlpatterns = [
 	#url(r'despidos/', include('despidos.urls')),
 	url(r'^accounts/', include('allauth.urls')),
