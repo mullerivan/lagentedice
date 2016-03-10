@@ -30,9 +30,9 @@
 
   <body>
 
-
     <div class="container">
       <main class="main">
+      {% block content %}
       <div class="row counter-container">
 
         <h1 class="counter-title">Despidos registrados</h1>
@@ -57,11 +57,9 @@
 
         </div>
       </div>
+      {% endblock %}
       </main>
-{% if latest_dismissals  %}
-  sarasa
-{% endif %}
-          {% for dismissal in latest_dismissals %}
+         {% for dismissal in latest_dismissals %}
             <div class="col-md-4">
               sarasas
               {{ dismissal.created }}

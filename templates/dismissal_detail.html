@@ -1,6 +1,16 @@
+{% extends 'home.html' %}
+
+{% load comments %}
+{% block content %}
 <h1>{{ object.user.email }}</h1>
 <p>{{ object.workplace }}</p>
 <p>{{ object.dissmisal_date }}</p>
 <p>{{ object.comment }}</p>
 <p>Published: {{ object.created }}</p>
 
+{% render_comment_form for object %}
+
+{% get_comment_count for object as comment_count %}
+<p>{{ comment_count }} comments have been posted.</p>
+{% render_comment_list for object %}
+{% endblock %}
