@@ -45,17 +45,18 @@ INSTALLED_APPS = [
     'django_password_strength',
 
     'bootstrap3',
-    'nocaptcha_recaptcha',    
+    'nocaptcha_recaptcha',
     #DEV!
     'debug_toolbar',
     'despidos',
     'accounts',
+    'django_comments',
 
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',    
+    'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',    
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE_CLASSES = [

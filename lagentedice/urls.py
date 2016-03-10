@@ -21,17 +21,20 @@ from django.contrib.auth.decorators import login_required
 admin.autodiscover()
 
 urlpatterns = [
-	#url(r'despidos/', include('despidos.urls')),
-	url(r'^accounts/', include('allauth.urls')),
+    # url(r'despidos/', include('despidos.urls')),
+    url(r'^accounts/', include('allauth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$',
         HomeView.as_view(),
         name='home'),
-     url(r'^nuevo/$',
-        login_required( NewDismissalView.as_view()),
+    url(r'^nuevo/$',
+        login_required(NewDismissalView.as_view()),
         name='new_dismissal_view'),
-     url(r'^(?P<pk>[0-9]+)/edit/$',
-         login_required( EditDismissalView.as_view()),
-         name='edit_dismissal_view'),
+    url(r'^(?P<pk>[0-9]+)/edit/$',
+        login_required(EditDismissalView.as_view()),
+        name='edit_dismissal_view'),
+    url(r'^comments/', include('django_comments.urls')),
+    url(r'^(?P<pk>[0-9]+)/$', DismissalDetailView.as_view(),
+        name='dismissal-detail'),
 
 ]
