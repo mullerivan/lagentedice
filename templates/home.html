@@ -58,6 +58,16 @@
         </div>
       </div>
       </main>
+{% if latest_dismissals  %}
+  sarasa
+{% endif %}
+          {% for dismissal in latest_dismissals %}
+            <div class="col-md-4">
+              sarasas
+              {{ dismissal.created }}
+            </div>
+          {% endfor %}
+
 
       <footer class="footer">
         <div class="row">

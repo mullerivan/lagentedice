@@ -10,5 +10,3 @@ class Dismissal(models.Model):
     workplace = models.CharField('Lugar donde trabajaba:',max_length=70)
     comment = models.CharField('Comentario:', max_length=140)
 
-
-
